@@ -55,6 +55,8 @@
 - **"ffmpeg 安装失败"**：手动下载 https://ffmpeg.org/download.html 并安装
 - 其他问题：把黑窗口里的错误信息发给我
 
+![界面截图](screenshot.png)
+
 ## 使用教程
 
 ### 1. 导入视频
