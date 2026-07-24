@@ -84,12 +84,20 @@ def main():
                    "--accept-source-agreements", "--accept-package-agreements"])
         if r.returncode != 0:
             print("  [错误] ffmpeg 自动安装失败")
-            print("  手动安装步骤：")
+            print()
+            print("  请按以下步骤手动安装：")
             print("  1. 打开 https://www.gyan.dev/ffmpeg/builds/")
             print("  2. 下载 ffmpeg-release-full.7z")
-            print("  3. 解压到任意文件夹，把 bin 目录路径加到 PATH")
-            print("  4. 重新运行本程序")
-            input("  按回车退出..."); return
+            print("  3. 右键解压到 文档 文件夹里")
+            print("  4. 回到这里，粘贴解压后 ffmpeg.exe 所在文件夹的完整路径")
+            print("     （例如：C:\Users\你的用户名\Documents\ffmpeg-xxx\bin）")
+            ffmpeg_path = input("  > ").strip()
+            if ffmpeg_path and os.path.isdir(ffmpeg_path):
+                os.environ["PATH"] = ffmpeg_path + os.pathsep + os.environ.get("PATH", "")
+                print("  [OK] ffmpeg 已就绪")
+            else:
+                print("  路径无效，请重新运行本程序")
+                input("  按回车退出..."); return
         for d in ffmpeg_dir.glob("Gyan.FFmpeg_*"):
             for b in d.glob("ffmpeg-*/bin/ffmpeg.exe"):
                 os.environ["PATH"] = str(b.parent) + os.pathsep + os.environ.get("PATH", "")
