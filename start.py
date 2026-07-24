@@ -83,7 +83,12 @@ def main():
         r = _run(["winget", "install", "--id", "Gyan.FFmpeg",
                    "--accept-source-agreements", "--accept-package-agreements"])
         if r.returncode != 0:
-            print("  [错误] ffmpeg 安装失败")
+            print("  [错误] ffmpeg 自动安装失败")
+            print("  手动安装步骤：")
+            print("  1. 打开 https://www.gyan.dev/ffmpeg/builds/")
+            print("  2. 下载 ffmpeg-release-full.7z")
+            print("  3. 解压到任意文件夹，把 bin 目录路径加到 PATH")
+            print("  4. 重新运行本程序")
             input("  按回车退出..."); return
         for d in ffmpeg_dir.glob("Gyan.FFmpeg_*"):
             for b in d.glob("ffmpeg-*/bin/ffmpeg.exe"):
