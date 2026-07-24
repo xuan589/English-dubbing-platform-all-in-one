@@ -1,0 +1,17 @@
+{
+  "name": "dubbing-tool",
+  "private": true,
+  "version": "0.1.0",
+  "description": "英语配音一站式工具",
+  "main": "electron/main.js",
+  "scripts": {
+    "electron": "electron .",
+    "frontend:dev": "cd frontend && npm run dev",
+    "backend:dev": "cd backend && python main.py",
+    "dev": "node scripts/dev.js"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "concurrently": "^9.0.0"
+  }
+}
