@@ -55,7 +55,7 @@
 - **"ffmpeg 安装失败"**：手动下载 https://ffmpeg.org/download.html 并安装
 - 其他问题：把黑窗口里的错误信息发给我
 
-![界面截图](screenshot.png)
+![界面截图](screenshot.jpg)
 
 ## 使用教程
 
