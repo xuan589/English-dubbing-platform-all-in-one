@@ -90,7 +90,7 @@ def main():
             print("  2. 下载 ffmpeg-release-full.7z")
             print("  3. 右键解压到 文档 文件夹里")
             print("  4. 回到这里，粘贴解压后 ffmpeg.exe 所在文件夹的完整路径")
-            print("     （例如：C:\Users\你的用户名\Documents\ffmpeg-xxx\bin）")
+            print("     （例如：C:/Users/你的用户名/Documents/ffmpeg-xxx/bin）")
             ffmpeg_path = input("  > ").strip()
             if ffmpeg_path and os.path.isdir(ffmpeg_path):
                 os.environ["PATH"] = ffmpeg_path + os.pathsep + os.environ.get("PATH", "")
